@@ -2,17 +2,3 @@
 <%= @d %>
 <Centre>
 <table border="1" align='centre'><TR style="color: blue;"><TD><b>Carrier ID</b></TD><TD><b>Carrier Name</b></TD></TR>
-<%  require 'rubygems'
-   @flightcollection.each do |entry|
-   properties = entry.xpath(".//m:properties/*", { "m" => "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" })
-%>
-<TR>
-<%   for prop in properties
-%>
-<TD>
-<%= prop.content if prop.name == "carrid"  %>
-<%= prop.content if prop.name == "CARRNAME"  %>
-</TD>
-<% end %>
-</TR>
-<% end %>
